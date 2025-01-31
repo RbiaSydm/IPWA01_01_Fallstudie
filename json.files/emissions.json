@@ -1,0 +1,158 @@
+{
+    "emissionen": [
+      {
+        "land": "Deutschland",
+        "unternehmen": "Continental Automotive GmbH",
+        "sektor": "Automobil",
+        "jahr": 2023,
+        "co2_emissionen_tonnen": 9000000,
+        "wachstumsrate": 3.1,
+        "reduktionsziel": 10
+      },
+      {
+        "land": "Deutschland",
+        "unternehmen": "Volkswagen",
+        "sektor": "Automobil",
+        "jahr": 2023,
+        "co2_emissionen_tonnen": 7000000,
+        "wachstumsrate": 3.2,
+        "reduktionsziel": 20
+      },
+      {
+        "land": "USA",
+        "unternehmen": "Tesla",
+        "sektor": "Automobil",
+        "jahr": 2022,
+        "co2_emissionen_tonnen": 10000000,
+        "wachstumsrate": 5.1,
+        "reduktionsziel": 25
+      },
+      {
+        "land": "USA",
+        "unternehmen": "Microsoft",
+        "sektor": "Software",
+        "jahr": 2021,
+        "co2_emissionen_tonnen": 5000000,
+        "wachstumsrate": 0.7,
+        "reduktionsziel": 12
+      },
+      {
+        "land": "USA",
+        "unternehmen": "Amazon",
+        "sektor": "E-Commerce",
+        "jahr": 2023,
+        "co2_emissionen_tonnen": 12000000,
+        "wachstumsrate": 1.5,
+        "reduktionsziel": 32
+      },
+      {
+        "land": "USA",
+        "unternehmen": "Google",
+        "sektor": "Software",
+        "jahr": 2023,
+        "co2_emissionen_tonnen": 3700000,
+        "wachstumsrate": 1.7,
+        "reduktionsziel": 42
+      },
+      {
+        "land": "China",
+        "unternehmen": "Huawei",
+        "sektor": "Technologie",
+        "jahr": 2020,
+        "co2_emissionen_tonnen": 10000000,
+        "wachstumsrate": 3.9,
+        "reduktionsziel": 14
+      },
+      {
+        "land": "China",
+        "unternehmen": "Alibaba",
+        "sektor": "E-Commerce",
+        "jahr": 2022,
+        "co2_emissionen_tonnen": 8000000,
+        "wachstumsrate": 3.0,
+        "reduktionsziel": 26
+      },
+      {
+        "land": "China",
+        "unternehmen": "Xiaomi",
+        "sektor": "Technologie",
+        "jahr": 2023,
+        "co2_emissionen_tonnen": 4000000,
+        "wachstumsrate": 2.4,
+        "reduktionsziel": 25
+      },
+      {
+        "land": "China",
+        "unternehmen": "State Grid",
+        "sektor": "Energie",
+        "jahr": 2020,
+        "co2_emissionen_tonnen": 11000000,
+        "wachstumsrate": 4.0,
+        "reduktionsziel": 50
+      },
+      {
+        "land": "Schweden",
+        "unternehmen": "Spotify",
+        "sektor": "Software",
+        "jahr": 2023,
+        "co2_emissionen_tonnen": 200000,
+        "wachstumsrate": 2.2,
+        "reduktionsziel": 30
+      },
+      {
+        "land": "Japan",
+        "unternehmen": "Sony",
+        "sektor": "Elektronik",
+        "jahr": 2022,
+        "co2_emissionen_tonnen": 4200000,
+        "wachstumsrate": 3.6,
+        "reduktionsziel": 17
+      },
+      {
+        "land": "Indien",
+        "unternehmen": "NTPC Limited",
+        "sektor": "Energie",
+        "jahr": 2023,
+        "co2_emissionen_tonnen": 5000000,
+        "wachstumsrate": 4.5,
+        "reduktionsziel": 30
+      },
+      {
+        "land": "Indien",
+        "unternehmen": "Tata Steel",
+        "sektor": "Industrie",
+        "jahr": 2023,
+        "co2_emissionen_tonnen": 8000000,
+        "wachstumsrate": 2.1,
+        "reduktionsziel": 19
+      },
+      {
+        "land": "Indien",
+        "unternehmen": "Infosys",
+        "sektor": "Technologie",
+        "jahr": 2022,
+        "co2_emissionen_tonnen": 500000,
+        "wachstumsrate": 3.7,
+        "reduktionsziel": 13
+      },
+      {
+        "land": "Russland",
+        "unternehmen": "Lukoil",
+        "sektor": "Energie",
+        "jahr": 2023,
+        "co2_emissionen_tonnen": 6000000,
+        "wachstumsrate": 1.9,
+        "reduktionsziel": 10
+      },
+      {
+        "land": "Russland",
+        "unternehmen": "Yandex",
+        "sektor": "Technologie",
+        "jahr": 2021,
+        "co2_emissionen_tonnen": 400000,
+        "wachstumsrate": 1.2,
+        "reduktionsziel": 8
+      }
+    ]
+  }
+  

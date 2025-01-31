@@ -1,0 +1,262 @@
+@import "~bootstrap-rtl/dist/css/bootstrap-rtl.min.css";
+
+/* Allgemeine CSS Styles
+
+/* Überschriftenfarbe h3 Container der Homepage */
+.homepage h3 {
+  color: #F8F9FA;
+}
+
+/* Überschriftenfarbe h3 von sekundären Seiten */
+.aboutus h3,
+.privacy h3,
+.imprint h3 {
+  color: #499033;
+}
+
+*  { /* Universeller Selektor */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+
+
+
+/* CSS Styles für Header-Bereich & Navbar & Sidebar */
+
+html {
+  scroll-padding-top: 80px; /* Höhe der Navbar */
+}
+
+
+
+/* Hintergrundfarbe der Navbar */
+.navbar {
+  background-color: white;
+}
+
+.navbar-nav .nav-link {
+  color: black; /* Textfarbe für die Links */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #499033; /* Textfarbe Hover */
+}
+
+/* Anpassung des Hamburger-Icons */
+.navbar-toggler-icon {
+  background-color: #000; /* Schwarze Farbe Hamburger-Symbol */
+}
+
+
+
+/* Anpassung Hamburger Button */
+.btn {
+  background-color: transparent;  /* Entfernt die Hintergrundfarbe */
+  border: none;  /* Entfernt den Rahmen */
+  padding: 0; /* Entfernt das Padding */
+}
+
+.btn:focus {
+  outline: none; /* Entfernt den Fokusrahmen (blauer Rand) vom Bootstrap */
+  box-shadow: none; /* Entfernt den Schatten bei Fokus */
+}
+
+.bi-list {
+  font-size: 1.5rem; /* Vergrößert das Symbol */
+}
+
+
+
+/* Hintergrundfarbe der Sidebar */
+.offcanvas {
+  background-color: #ffffff;
+}
+
+/* Stil der Sidebar-Links */
+.offcanvas-body a {
+  color: #000000;
+  text-decoration: none; /* Entfernt Unterstreichung */
+}
+
+.offcanvas-body a:hover {
+  color: #499033; /* Textfarbe Hover */
+}
+
+
+
+/* Seitenbar Titelfarben*/
+.offcanvas-header {
+  background-color: #499033;
+  border-bottom: 2px solid #fff;
+  padding: 1rem;
+}
+
+.offcanvas-title {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold; /* Fettgedruckt */
+}
+
+
+
+
+/* CSS Styles für Content-Bereich */
+
+/* Farben für die einzelnen Container der Homepage */
+.header-container {
+  background-color: #2d6a4f;
+  color: #000000;
+  margin-bottom: 5rem; /* Abstand nach unten */
+}
+
+.introduction-container {
+  background-color: #C5C5AC;
+  color: #000000;
+  margin-bottom: 3rem; /* Abstand nach unten */
+}
+
+.emissions-container {
+  background-color: #a8d08d;
+  color: #000000;
+  margin-bottom: 3rem; /* Abstand nach unten */
+}
+
+.companies-container {
+  background-color: #b5e2ca;
+  color: #000000;
+  margin-bottom: 3rem; /* Abstand nach unten */
+  padding-bottom: 1.5rem;
+}
+
+.reductionstrategys-container {
+  background-color: #d3d3d3;
+  color: #000000;
+  margin-bottom: 3rem; /* Abstand nach unten */
+}
+
+.footer-container {
+  background-color: #C27D38;
+}
+
+
+
+
+/* Symbol für Liste mit Reduzierungsstrategien */
+.bi-arrow-repeat {
+  color: #349136; /* Grün für das Recycling-Symbol */
+  font-size: 1.3rem;
+  font-weight: bold; /* Fettgedruckt */
+}
+
+
+
+
+/* CSS Styles für Footer-Bereich */
+.footer-link {
+  color: #000;
+  /* Standardfarbe der Links */
+}
+
+.footer-link:hover, .footer-link i:hover {
+  color: #F8F9FA;
+  ;
+  /* Farbe des Links beim Hover */
+}
+
+
+
+
+/* CSS Styles für SearchBar */
+#searchList {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+#searchList li {
+  cursor: pointer;
+}
+
+#searchList li:hover {
+  background-color: #f0f0f0;
+}
+
+html {
+  scroll-padding-top: 80px; /* Höhe der Navbar */
+}
+
+
+
+
+/* Responsiv Design für Tablets */
+@media (max-width: 992px) and (min-width: 768px) {
+  .logo {
+    width: 75px;
+    height: 45px; /* Größeres Logo  */
+  }
+
+  .navbar-brand {
+    font-size: 1.6rem !important;
+  }
+
+  p {
+    font-size: 1.6rem; /* Größere Schriftgröße  */
+  }
+
+  h3 {
+    font-size: 2.2rem !important; /* Größere Überschrift */
+  }
+
+  h4 {
+    font-size: 2.0rem !important; /* Vergrößert das #Esbeginntbeimir */
+  }
+
+  h5 {
+    font-size: 1.8rem !important; /* Vergrößert Footer Überschriften */
+  }
+
+  ul, li {
+    font-size: 1.8rem; /* Größere Schriftgröße für Aufzählungen */
+  }
+
+  .text-justify {
+    text-align: left; /* Textfluss auf linksbündig ändern */
+  }
+
+  .bi-arrow-repeat {
+    font-size: 2rem; /* Vergrößert die Symbole */
+  }
+
+  table {
+    font-size: 1.6rem; /* Größere Schriftgröße für die ganze Tabelle */
+  }
+
+  th {
+    font-size: 1.5rem; /* Größere Schriftgröße für Tabellenüberschrift */
+  }
+
+  .copyright-section {
+    font-size: 1.4rem !important; /* Schriftgröße anpassen */
+  }
+
+  .bi {
+    font-size: 1.5rem !important; /* Schriftgröße anpassen */
+  }
+}
+
+
+
+
+
+/* Anpassung unregelmäßiger Abstand Text Smartphones */
+@media (max-width: 767px) {
+  .text-justify {
+    text-align: left; /* Textfluss linksbündig */
+  }
+}
+ 

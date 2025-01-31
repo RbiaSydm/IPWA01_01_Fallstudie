@@ -1,0 +1,237 @@
+<html lang="de" dir="ltr">
+  
+<head>
+    <!-- Zeichensatzdefinition Sonderzeichen -->
+    <meta charset="UTF-8">
+  
+    <!-- Optimierung für mobile Endgeräte durch Anpassung an die Bildschirmbreite -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap JavaScript-Bundle (enthält Popper.js für interaktive Komponenten wie Dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Bootstrap Icons / Symbolen und Icons innerhalb der Webseite -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  
+    <!-- Bootstrap Standard CSS-Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Bootstrap RTL (Right-to-Left) Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  
+    <!-- DataTables CSS / Gestaltung und Formatierung von interaktiven Tabellen -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+  
+    <!-- jQuery-Bibliothek, die von DataTables benötigt wird, um Tabelleninhalte dynamisch zu verwalten -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    <!-- DataTables JavaScript / interaktive Tabellenfunktionen (Sortierung, Filterung, Pagination) -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- Favicon / Anzeige des Webseiten-Logos im Browser-Tab -->
+    <link rel="icon" href="logo.png" type="image/png">
+  
+    <!-- Externes Stylesheet / Design der Webseite -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
+
+<body class="homepage">
+
+
+
+
+<!--Header Bereich-->
+<!-- Integration der navbar-main durch fetch Funktion-->
+<header>
+  <div class="header-container"></div>
+  <div id="navbar-container"></div>
+  <script>
+    fetch('../components/navbar-main.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-container').innerHTML = data;
+        setLanguageDirection(); // Rufe die Funktion NACH dem Laden von navbar-main.html auf
+      });
+  </script>
+</header>
+
+
+<!--Content Bereich-->
+<!-- Einführung -->
+<section id="introduction" class="fluid introduction-container d-flex justify-content-center align-items-center text-center mt-5">
+  <div class="text-justify w-75">
+  <h3>Einführung und Wichtigkeit der Thematik</h3>
+  <p>
+    Die CO₂-Emissionen von Unternehmen tragen erheblich zum Klimawandel bei, und ihr CO₂-Footprint reflektiert diese Auswirkungen. 
+    In den Tabellen finden Sie Informationen zu den Emissionen von führenden Unternehmen. 
+    Sowie die klimafreundlichsten Unternehmen weltweit!
+    Denken Sie daran: Jeder von uns kann durch nachhaltige Entscheidungen zu Hause einen positiven Einfluss auf die Reduktion von CO₂ haben!
+  </div>
+</section>
+
+
+
+<!-- Emissionsdaten Tabelle mit externer json datei angebunden mit java script -->
+<section id="emissions" class="fluid emissions-container d-flex justify-content-center align-items-center text-center mt-5"> 
+  <div class="text-justify w-75">
+    <h3>CO2 Footprint Emissionsdaten</h3>
+    <p>Hier finden Sie eine Übersicht über die jährliche Emittierung von Unternehmen und Ländern!</p>
+    <!--bootstrap fw für tabelle-->
+      <div class="table-responsive">
+          <table class="table table-striped table-bordered text-center">
+            <thead>
+        <tr>
+          <th>Land</th>
+          <th>Unternehmen</th>
+          <th>Sektor</th>
+          <th>Jahr</th>
+          <th>CO2-Emissionen(Tonnen)</th>
+          <th>Wachstumsrate (%)</th>
+          <th>Reduktionsziel (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dynamisch generierte Zeilen kommen hierher -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+  async function loadEmissionen() {
+    try {
+      // JSON-Daten abrufen (
+      const response = await fetch('../json.files/emissions.json');
+      const data = await response.json();
+
+      // Tabelle referenzieren und Zeilen einfügen
+      const tableBody = document.querySelector('#emissions tbody');
+
+      // Für jedes Element in der JSON-Datenquelle eine Zeile erstellen
+      data.emissionen.forEach(emission => {
+        tableBody.innerHTML += `
+          <tr>
+            <td>${emission.land}</td>
+            <td>${emission.unternehmen}</td>
+            <td>${emission.sektor}</td>
+            <td>${emission.jahr}</td>
+            <td>${emission.co2_emissionen_tonnen.toLocaleString()}</td>
+            <td>${emission.wachstumsrate}</td>
+            <td>${emission.reduktionsziel}</td>
+          </tr>
+        `;
+      });
+
+ // DataTables aktivieren
+ $(document).ready(function() {
+  $('table').DataTable();
+// XSS-Schutz für die Suche in der DataTable aktivieren
+initializeSearch('#table', '#datatable-search');
+});
+
+    } catch (error) {
+      console.error('Fehler beim Laden der Daten:', error);
+    }
+  }
+
+  // Funktionsaufruf nach dem Laden der Seite
+  document.addEventListener('DOMContentLoaded', loadEmissionen);
+</script>
+
+
+
+<!-- Klimafreundliche Unternehmen -->
+  <section id="companies" class="fluid companies-container d-flex justify-content-center align-items-center text-center mt-5">
+    <div class="text-justify w-75">
+  
+  <h3>Klimafreundliche Unternehmen</h3>
+  <div class="table-responsive">
+ <!--bootstrap fw für tabelle-->
+ <table class="table table-striped table-bordered">
+  <thead class="text-center">
+    <thead>
+      <tr>
+        <th>Platz</th>
+        <th>Unternehmen</th>
+        <th>Land</th>
+        <th>Sektor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Sims Ltd.</td>
+        <td>Australien</td>
+        <td>Ressourcenmanagement</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Brambles Ltd</td>
+        <td>Australien</td>
+        <td>Logistik</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Vestas Wind Systems A/S</td>
+        <td>Dänemark</td>
+        <td>Windenergie</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Taiwan High Speed Rail Corporation</td>
+        <td>Taiwan</td>
+        <td>Transport</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Nordex SE</td>
+        <td>Deutschland</td>
+        <td>Windenergie</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+
+
+<!-- C02 Reduzierungsstrategien -->
+<section id="reductionstrategys" class="fluid reductionstrategys-container d-flex justify-content-center align-items-center text-center mt-5">
+  <div class="text-justify w-75">
+  <div>
+  <h3>CO2 Reduzierungsstrategien</h3>
+  <h4>#Esbeginntbeimir</h4>
+  <p>
+    <ul class="list-unstyled">
+      <li><i class="bi bi-arrow-repeat"></i>Achten Sie auf nachhaltige Beschaffung</li>
+      <li><i class="bi bi-arrow-repeat"></i>Fördern Sie die Abfallvermeidung und Recycling</li>
+      <li><i class="bi bi-arrow-repeat"></i>Unterstützen Sie grünes Pendeln</li>
+      <li><i class="bi bi-arrow-repeat"></i>Verbessern Sie die Gebäudeisolierung</li>
+      <li><i class="bi bi-arrow-repeat"></i>Fördern Sie die Remote-Arbeit</li>
+      <li><i class="bi bi-arrow-repeat"></i>Reduzieren Sie Geschäftsreisen</li>
+      <li><i class="bi bi-arrow-repeat"></i>Benutzen Sie eine Energiemanagement-Software</li>
+   </ul>
+  </p>
+  </div>
+</section>
+
+
+
+<!-- Footer Bereich -->
+<!-- Integration Footer durch fetch Funktion-->
+<div id="footer-container" class="footer-container"></div>
+<script>
+  fetch('../components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
+
+
+
+<script src="/src/main.js/languagedetector.js"></script> <!-- JavaScript-Datei, die die Sprache überprüft -->
+<script src="/src/main.js/utils.js"></script>
+</body>
+</html>
